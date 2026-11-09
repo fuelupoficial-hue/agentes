@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--panel:#101010;--line:#222;--fg:#fff;--mut:#9a9a9a;--acc:#FFC000;--on-acc:#000;--rotor:#1b1b1b;--rotor2:#2c2c2c;--btn:#FFC000;--btn-fg:#000;--padt:78px;--padb:78px}
+body.b{--bg:#f1eee8;--panel:#e8e4dc;--line:#d6d1c6;--fg:#0b0b0b;--mut:#5f5b53;--acc:#D2141B;--on-acc:#fff;--rotor:#e2ded4;--rotor2:#cfc9bc;--btn:#0b0b0b;--btn-fg:#fff}
+body.story{--padt:250px;--padb:330px}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;background:var(--bg)}
+body{height:1350px;position:relative;overflow:hidden;color:var(--fg);font-family:'Inter',sans-serif}
+body.story{height:1920px}
+.slab{position:absolute;top:-10%;right:-18%;width:62%;height:130%;background:var(--panel);transform:skewX(-12deg)}
+.rotor{position:absolute;right:-300px;bottom:-250px;width:1000px;height:1000px}
+body.story .rotor{bottom:-120px}
+.wrap{position:relative;height:100%;padding:var(--padt) 72px var(--padb);display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:18px;font-family:'Barlow Condensed';font-weight:800;font-size:46px;letter-spacing:.22em;text-transform:uppercase}
+.top i{display:block;width:18px;height:18px;background:var(--acc);transform:skewX(-12deg)}
+.rule{height:2px;background:var(--line);margin-top:26px}
+.mid{flex:1;display:flex;flex-direction:column;justify-content:center}
+.tag{align-self:flex-start;background:var(--acc);color:var(--on-acc);font-family:'Barlow Condensed';font-weight:900;font-size:62px;letter-spacing:.08em;text-transform:uppercase;padding:8px 34px 6px;transform:skewX(-12deg)}
+.tag span{display:inline-block;transform:skewX(12deg)}
+.ate{font-family:'Barlow Condensed';font-weight:800;font-size:76px;letter-spacing:.14em;text-transform:uppercase;margin-top:44px;line-height:1}
+.pct{font-family:'Barlow Condensed';font-weight:900;font-size:600px;line-height:.78;letter-spacing:-.02em;margin-left:-14px}
+.pct small{font-size:.62em;letter-spacing:0;margin-left:6px}
+.desc{font-family:'Barlow Condensed';font-weight:800;font-size:80px;line-height:.98;text-transform:uppercase;margin-top:34px}
+.desc b{color:var(--acc);font-weight:800}
+.cta{display:flex;align-items:center;gap:26px;margin-top:6px}
+.btn{background:var(--btn);color:var(--btn-fg);font-family:'Barlow Condensed';font-weight:800;font-size:50px;letter-spacing:.08em;text-transform:uppercase;padding:26px 44px 22px;display:flex;gap:22px;align-items:center}
+.btn em{font-style:normal;color:var(--acc)}
+body:not(.b) .btn em{color:var(--btn-fg)}
+.fine{font-size:20px;line-height:1.35;color:var(--mut);margin-top:26px;max-width:940px}
+</style></head>
+<body>
+<div class="slab"></div>
+<svg class="rotor" viewBox="-500 -500 1000 1000" id="rotor"></svg>
+<div class="wrap">
+  <div class="top"><i></i>Stahl Car</div><div class="rule"></div>
+  <div class="mid">
+    <div class="tag"><span>Black Friday</span></div>
+    <div class="ate">Até</div>
+    <div class="pct">50<small>%</small></div>
+    <div class="desc">de desconto<br>em <b>serviços*</b></div>
+  </div>
+  <div class="cta"><div class="btn">Solicite seu orçamento <em>→</em></div></div>
+  <div class="fine">*Desconto de até 50%, conforme o serviço. Consulte condições com a Stahl Car.</div>
+</div>
+<script>
+const h=location.hash;document.body.classList.toggle('b',h.includes('b'));document.body.classList.toggle('story',h.includes('story'));
+// disco de freio desenhado por código: anéis, furos ventilados e cubo com 5 parafusos
+const ns='http://www.w3.org/2000/svg',s=document.getElementById('rotor');
+const el=(t,a)=>{const e=document.createElementNS(ns,t);for(const k in a)e.setAttribute(k,a[k]);s.appendChild(e);return e};
+const c=getComputedStyle(document.body),R=c.getPropertyValue('--rotor').trim(),R2=c.getPropertyValue('--rotor2').trim(),BG=c.getPropertyValue('--bg').trim();
+el('circle',{r:480,fill:R,stroke:R2,'stroke-width':6});
+el('circle',{r:455,fill:'none',stroke:R2,'stroke-width':2});
+el('circle',{r:230,fill:'none',stroke:R2,'stroke-width':2});
+for(let i=0;i<48;i++){const a=i*Math.PI*2/48,r=i%2?345:385;el('circle',{cx:Math.cos(a)*r,cy:Math.sin(a)*r,r:15,fill:BG,stroke:R2,'stroke-width':3})}
+el('circle',{r:170,fill:BG,stroke:R2,'stroke-width':6});
+el('circle',{r:75,fill:R,stroke:R2,'stroke-width':4});
+for(let i=0;i<5;i++){const a=i*Math.PI*2/5-Math.PI/2;el('circle',{cx:Math.cos(a)*120,cy:Math.sin(a)*120,r:19,fill:R,stroke:R2,'stroke-width':4})}
+</script>
+</body></html>
