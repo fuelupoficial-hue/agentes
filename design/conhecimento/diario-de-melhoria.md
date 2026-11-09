@@ -16,3 +16,17 @@ A herói disco de freio · B herói óleo e filtro · C herói carro. Links Canv
 - Todas: **não consigo provar que as fotos são fotografias reais**. Têm aparência de imagem sintética (brilho exagerado, objeto sem marca). Conferir no Canva (Detalhes da imagem) antes de aprovar.
 
 **Mudanças da rodada 2:** título cromo+ouro com contorno e sombra 3D; asterisco em todas as ofertas; fita inteira dentro da peça; sem emblema de marca no carro; pedir fotografia real de estúdio; versão story 9:16.
+
+## Rodada 2 (09/11/2026) · Canva
+Links:
+- A2 (disco de freio): https://www.canva.com/d/1PUo1Hykg5LqDqn (DAHacYQLIyU)
+- B2 (óleo e filtro): https://www.canva.com/d/nhm_TZ3M5Sgv412 (DAHacaTrj4w), com **edição em rascunho aguardando aprovação do João** (não gravada)
+- C2 (story com carro): **não gerada** (`quota_exceeded`: créditos de IA do Canva esgotados)
+
+**Avaliação:**
+- A2: melhor peça até agora. Fita completa, selo com "EM SERVIÇOS*", disco enorme, margens ok. Falta: título ainda branco/dourado chapado (sem cromo 3D); botão com cantos arredondados.
+- B2: corrigiu o asterisco, mas o Canva **inventou texto no frasco** ("ÓLEO DE DE MOTOR", "SAE 5W-30", "100% SINTÉTICO", "1L"). Rascunho remove as especificações e deixa "ÓLEO DE MOTOR"; ajusta o espaçamento do selo.
+- Lição: **sempre ler `design_content` do design gerado** para achar texto que o Canva inventou (rótulos, specs).
+- Lição: gerar no máximo 3 por rodada; 5 gerações esgotaram os créditos.
+
+**Pendências para a rodada 3 (depois que os créditos voltarem ou com edit-design):** título cromo/ouro 3D, versão story, foto real comprovada, logotipo e preço do selo.
