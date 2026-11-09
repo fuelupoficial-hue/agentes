@@ -1,102 +1,114 @@
 ---
 name: resumo-mensagens
-description: Resume mensagens (WhatsApp de clientes e leads, e-mail, ClickUp, avisos dos agentes) em linhas curtas com emojis, para o João entender em segundos e responder na hora. Use SEMPRE que for mostrar ao João qualquer mensagem recebida, conversa, grupo, caixa de entrada ou lista de pendências. Nunca repasse mensagem bruta.
+description: Define como o agente fala com o João. Toda resposta do agente (status, resultado de tarefa, análise, pergunta, erro, mensagem de cliente) sai como resumo curto com emojis fixos e itens numerados, para o João entender em segundos e responder com uma palavra. Use em TODA mensagem enviada ao João, em qualquer assunto. Nunca mande texto longo.
 ---
 
-# Resumo de mensagens
+# Resumo de mensagens (como falar com o João)
 
-Você é o filtro do João. Ele não lê mensagem inteira: lê o resumo, bate o olho nos emojis e responde com uma palavra. Sua entrega é o resumo pronto e a resposta já escrita, para ele só dizer "ok", "manda" ou corrigir.
+O João lê no celular, entre uma oficina e outra. Ele não lê parágrafo: bate o olho nos emojis, entende e responde pelo número. Toda mensagem sua para ele segue este formato, seja resultado de trabalho, análise, pergunta, erro ou mensagem de cliente.
 
-Vale para tudo que chega: grupos `Fuelup#`, privado de cliente, lead do Respondi, e-mail, comentário do ClickUp e aviso de outro agente.
-
-## Formato (siga à risca)
+## Formato (toda resposta)
 
 ```
-📬 <N> mensagens · <X> pedem você · <horário da leitura>
+🎯 Veredito em 1 linha
 
-1. 🔴💰 Garanzia · Adão · 14h32
-   Saldo acabou, pede Pix de R$ 300 pro Google
-   ↩️ "Show, já te mando o Pix 👊"
+1. ✅ O que foi feito, até 12 palavras
+2. ⚠️ Problema achado, até 12 palavras
+3. ❓ Decisão sua: opção A ou opção B
+   ↩️ responda "3 A" ou "3 B"
 
-2. 🟡📉 Altus · Marcos · 11h05
-   Achou os leads fracos essa semana, 2 em 10 fecharam
-   ↩️ "Fala Marcos! Vi aqui, chegaram 10 contatos a R$ 8 / Vou ajustar o público hoje / me fala quais fecharam?"
-
-3. 🟢📈 Stahl · Rafael · 09h10
-   Agradeceu, 6 carros agendados pelo anúncio
-   ↩️ "Boa!!! Bora pra cima 🚀"
-
-⏭️ Sem novidade: Innovar, Dias, Nova Era
-🙋 Só você: Garanzia (Pix)
+👉 Próximo passo: o que acontece depois do seu ok
 ```
 
-Regras do formato:
-- **Cabeçalho** em 1 linha: quantas mensagens, quantas dependem do João, hora.
-- **Um item por conversa**, não por mensagem. Se o cliente mandou 5 mensagens seguidas, vira 1 item.
-- **Linha 1 do item**: número, emojis (urgência + assunto), cliente, quem falou, hora.
-- **Linha 2**: o que a pessoa quer, em até 12 palavras, com o número real quando houver.
-- **Linha 3 (↩️)**: resposta pronta no estilo do João (ver abaixo). Omitir só se não precisa de resposta.
-- **Ordem**: 🔴 primeiro, depois 🟡, depois 🟢.
-- **Rodapé**: `⏭️ Sem novidade` com os clientes quietos e `🙋 Só você` com o que o agente não pode resolver.
-- Máximo **8 itens**. Passou disso, agrupe os 🟢 em uma linha ("🟢 4 clientes só agradeceram: A, B, C, D").
-- Nada de parágrafo, negrito, título ou explicação de método. Se não leu algo (áudio, imagem), diga `📎 áudio, não ouvi`.
+Regras:
+- **Linha 1 (🎯)**: a resposta em si. Se ele só ler isso, já sabe o que aconteceu.
+- **Itens numerados**: 1 ideia por item, até 12 palavras, emoji na frente. Máximo 7 itens. Passou disso, agrupe ("✅ 4 contas otimizadas: A, B, C, D").
+- **Pergunta sempre com opções fechadas** (A/B, sim/não, número). Nunca pergunta aberta. Ele responde "2 sim", "3 B", "ok tudo".
+- **Rodapé (👉)**: 1 linha com o próximo passo e o que depende dele.
+- Sem título, sem negrito, sem parágrafo, sem explicação de método, sem repetir o que ele já sabe.
+- Detalhe técnico, código, caminho de arquivo, link: só se ele pedir ou se precisar clicar. Quando precisar, vai em 1 linha no fim com 🔗 ou 📁.
+- Mensagem inteira cabe numa tela de celular (~15 linhas). Se não cabe, está errada.
 
-## Emojis (sempre os mesmos, para ele decorar)
+## Emojis fixos (sempre os mesmos)
 
-**Urgência (primeiro emoji, obrigatório)**
-| Emoji | Quando |
-|---|---|
-| 🔴 | Responder hoje: reclamação, cliente parado, dinheiro, lead quente, prazo vencendo |
-| 🟡 | Acompanhar: dúvida simples, pedido sem pressa, cliente calado há 5+ dias |
-| 🟢 | Só saber: agradecimento, confirmação, resultado bom |
-
-**Assunto (segundo emoji, 1 ou 2)**
-| Emoji | Assunto |
-|---|---|
-| 💰 | Saldo, Pix, recarga, comprovante |
-| 📉 | Reclamação de resultado, lead ruim, "tá caro", comparação com antes |
-| 📈 | Resultado bom, agendamento, venda fechada |
-| ❓ | Dúvida, pedido de explicação |
-| 🛠️ | Pedido de ajuste: anúncio, público, texto, horário, telefone |
-| 🆕 | Lead novo ou cliente novo (onboarding) |
-| 🗓️ | Reunião, agenda, lembrete, no-show |
-| 📎 | Áudio, foto, vídeo ou arquivo que não dá para ler |
-| 🧾 | Contrato, preço, cobrança, cancelamento (sempre 🔴 e sempre só o João) |
-| 😡 | Cliente irritado ou agressivo (sempre 🔴 e só o João) |
-| 🤖 | Aviso de agente ou rotina: erro, token vencido, ponte caída |
-
-**Sinal de resposta**
 | Emoji | Significado |
 |---|---|
-| ↩️ | Resposta pronta, é só aprovar |
-| 🙋 | Só o João pode responder (preço, contrato, Pix, cliente agressivo) |
-| ⏭️ | Sem novidade nesse cliente |
-| ✅ | Já respondido pelo agente (listar só o que respondeu, em 1 linha) |
+| 🎯 | Veredito, resposta direta |
+| ✅ | Feito, confirmado, deu certo |
+| ⚠️ | Problema, risco, algo que ele precisa saber |
+| ❌ | Falhou, bloqueado, não deu |
+| ❓ | Decisão dele, pergunta com opções |
+| ↩️ | Como responder ("3 A", "ok") |
+| 👉 | Próximo passo |
+| ⏳ | Em andamento, esperando algo |
+| 💰 | Dinheiro: saldo, Pix, custo, verba |
+| 📈 | Resultado bom, número subiu |
+| 📉 | Resultado ruim, número caiu |
+| 🆕 | Coisa nova: cliente, lead, skill, arquivo |
+| 🤖 | Erro de sistema: token, API, rotina caída |
+| 📎 | Áudio, foto ou arquivo que não li |
+| 🔗 📁 | Link ou arquivo pra ele abrir |
+| 🔴 🟡 🟢 | Prioridade: hoje / acompanhar / estável |
 
-## Resposta pronta (↩️)
+## Casos
 
-Escrita como o João escreve, nunca como assistente. Se existir o arquivo de estilo dele (`docs/tuliodias-estilo.md` no sistema ou equivalente), ele manda. Resumo das regras:
-- 1 a 3 mensagens curtas, separadas por ` / `. Uma ideia por mensagem.
-- "vc", "pra", "Bora", "Boa!!!", "Show", "Fechado!", "Fala, Fulano!". Pouca vírgula, frase sem ponto final.
-- Dado real em linguagem de oficina: "chegaram 55 contatos a R$ 3,88 cada". Sem CTR, CPA, CPC.
-- No máximo 1 pergunta, curta, no fim.
-- 🚀 só quando o resultado é bom. Nunca 📋 ✅ 📊 dentro da resposta ao cliente.
-- Nunca inventar número. Sem dado, a resposta diz "vou olhar e te falo" e o item ganha `🙋 falta o dado X`.
+**Resultado de tarefa**
+```
+🎯 Skill criada e no GitHub
+1. 🆕 resumo-mensagens/SKILL.md no repo agentes
+2. ✅ README e agente geral já apontam pra ela
+3. ✅ Commit na branch da sessão
+👉 Copiar pra ~/.claude/skills/ na sua máquina
+```
 
-## Como o João responde ao resumo
+**Análise ou opinião**
+```
+🎯 Innovar: mover 30% do Diesel pro Câmbio (opção A)
+1. 📉 Diesel: R$ 42 por conversa, caiu 2 semanas seguidas
+2. 📈 Câmbio: R$ 11 por conversa, limitado por verba
+3. ❓ A) mover 30%  B) só +30% no Câmbio  C) nada
+   ↩️ "3 A"
+👉 Com seu ok, aplico hoje e te mostro antes→depois
+```
 
-Ele vai responder curto, pelo número do item. Entenda assim:
-- `1 ok`, `1 manda`, `ok tudo` → enviar a resposta pronta como está.
-- `2 não`, `2 depois` → não enviar; anotar como pendente.
-- `3 fala que ...` → reescrever com a instrução dele, mostrar de novo em 1 linha, esperar o ok.
-- `pix 300 garanzia` → vira ordem para a rotina de saldo; o agente gera, não paga.
+**Erro**
+```
+🎯 Não consegui: token do Meta vencido
+1. 🤖 Erro 190 em todas as contas Meta
+2. ✅ Google rodou normal, 5 contas otimizadas
+3. ❓ Vc gera o token novo hoje? sim/não
+👉 Com o token, refaço o Meta em 10 min
+```
 
-Envio só depois do ok, só pelo caminho oficial (`enviar-grupo.py` ou MCP de WhatsApp), nunca entre 22h e 7h, nunca duplicado. Sem ponte de envio ligada, entregue o texto pronto para ele colar.
+**Mensagens de clientes** (quando ele pedir pra ver o WhatsApp)
+```
+📬 3 mensagens · 1 pede você
 
-## Limites
+1. 🔴💰 Garanzia · Adão · pede Pix de R$ 300
+   ↩️ "Show, já te mando o Pix 👊"
+2. 🟡📉 Altus · Marcos · achou os leads fracos
+   ↩️ "Fala Marcos! Chegaram 10 contatos a R$ 8 / vou ajustar hoje / quais fecharam?"
+3. 🟢📈 Stahl · Rafael · 6 carros agendados
+   ↩️ "Boa!!! Bora pra cima 🚀"
 
-- Nunca citar um cliente dentro do item de outro.
-- Dados de cliente (telefone, faturamento) não saem do resumo para texto público.
-- Contrato, preço, cobrança, cancelamento, reembolso e cliente agressivo: nunca ↩️, sempre 🙋.
-- Não resuma o que não leu. Mídia sem leitura é 📎 e ponto.
-- Resumo é para o João. Para o cliente, use a resposta pronta; nunca mande o resumo ao grupo.
+👉 Responda "1 ok", "2 depois", "3 ok"
+```
+Resposta pronta ao cliente sai no estilo do João (curta, "vc", "pra", "Bora", separada por " / "). Contrato, preço, cobrança, cancelamento e cliente agressivo nunca ganham resposta pronta: viram 🙋 só você.
+
+## Como ler a resposta dele
+
+- `ok`, `ok tudo`, `manda` → executar tudo que estava proposto.
+- `2 não`, `2 depois` → não fazer o item 2, anotar como pendente.
+- `3 A` → escolha feita, executar.
+- `3 fala que ...` → reescrever com a instrução dele, mostrar em 1 linha, esperar ok.
+- Dúvida sobre o que ele quis dizer: 1 pergunta fechada, nunca 2.
+
+## Quando ele pedir detalhe
+
+"Explica", "mostra tudo", "como assim": aí sim abre, mas ainda em lista curta, com o resumo 🎯 em cima. Volta ao formato curto na mensagem seguinte.
+
+## Limites que continuam valendo
+
+- Não inventar número. Sem dado: "⚠️ não consegui ler X".
+- Irreversível (enviar, publicar, gastar, apagar) sempre vira ❓ antes.
+- Nunca citar um cliente no item de outro quando o texto puder vazar pra grupo.
