@@ -1,0 +1,16 @@
+{
+  "marca": "Stahl Car",
+  "oferta": "50",
+  "rodape": "*Desconto de até 50%, conforme o serviço. Consulte condições com a Stahl Car.",
+  "cta": "Solicite seu orçamento",
+  "contato": "",
+  "_aviso": "Itens abaixo são EXEMPLOS de oficina. Confirmar com o cliente antes de publicar: servicos, passos, countdown e contato.",
+  "servicos": ["Revisão completa", "Freios", "Suspensão", "Troca de óleo e filtros", "Alinhamento e balanceamento"],
+  "passos": [
+    ["Solicite o orçamento", "Conte qual serviço o seu carro precisa."],
+    ["Receba o valor", "Com o desconto da Black Friday aplicado."],
+    ["Agende o horário", "E deixe o carro com quem entende."]
+  ],
+  "countdown": { "numero": "3", "unidade": "dias" },
+  "data_bf": "27/11"
+}

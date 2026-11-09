@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--panel:#101010;--line:#242424;--fg:#fff;--mut:#9a9a9a;--acc:#FFC000;--on-acc:#000;--rotor:#1b1b1b;--rotor2:#2c2c2c;--btn:#FFC000;--btn-fg:#000;--padt:78px;--padb:78px}
+body.b{--bg:#f1eee8;--panel:#e8e4dc;--line:#d6d1c6;--fg:#0b0b0b;--mut:#5f5b53;--acc:#D2141B;--on-acc:#fff;--rotor:#e2ded4;--rotor2:#cfc9bc;--btn:#0b0b0b;--btn-fg:#fff}
+body.story{--padt:250px;--padb:330px}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;background:var(--bg)}
+body{height:1350px;position:relative;overflow:hidden;color:var(--fg);font-family:'Inter',sans-serif}
+body.story{height:1920px}
+.slab{position:absolute;top:-10%;right:-18%;width:62%;height:130%;background:var(--panel);transform:skewX(-12deg)}
+.rotor{position:absolute;right:-300px;bottom:-250px;width:1000px;height:1000px}
+body.story .rotor{bottom:-120px}
+.wrap{position:relative;height:100%;padding:var(--padt) 72px var(--padb);display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:18px;font-family:'Barlow Condensed';font-weight:800;font-size:46px;letter-spacing:.22em;text-transform:uppercase}
+.top i{display:block;width:18px;height:18px;background:var(--acc);transform:skewX(-12deg)}
+.top .pg{margin-left:auto;letter-spacing:.1em;font-size:36px;color:var(--mut)}
+.rule{height:2px;background:var(--line);margin-top:26px}
+.mid{flex:1;display:flex;flex-direction:column;justify-content:center}
+.tag{align-self:flex-start;background:var(--acc);color:var(--on-acc);font-family:'Barlow Condensed';font-weight:900;font-size:62px;letter-spacing:.08em;text-transform:uppercase;padding:8px 34px 6px;transform:skewX(-12deg)}
+.tag span{display:inline-block;transform:skewX(12deg)}
+.cd{font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase}
+.ate{font-size:76px;letter-spacing:.14em;margin-top:44px;line-height:1}
+.pct{font-family:'Barlow Condensed';font-weight:900;font-size:600px;line-height:.78;letter-spacing:-.02em;margin-left:-14px}
+.pct small{font-size:.62em;letter-spacing:0;margin-left:6px}
+.desc{font-family:'Barlow Condensed';font-weight:800;font-size:80px;line-height:.98;text-transform:uppercase;margin-top:34px}
+.desc b,.h2 b,.acc{color:var(--acc);font-weight:800}
+.cta{display:flex;align-items:center;gap:26px;margin-top:34px}
+.btn{background:var(--btn);color:var(--btn-fg);font-family:'Barlow Condensed';font-weight:800;font-size:50px;letter-spacing:.08em;text-transform:uppercase;padding:26px 44px 22px;display:flex;gap:22px;align-items:center}
+.btn em{font-style:normal;color:var(--acc)}
+body:not(.b) .btn em{color:var(--btn-fg)}
+.fine{font-size:20px;line-height:1.35;color:var(--mut);margin-top:26px;max-width:940px}
+.cd-sm{font-size:64px;letter-spacing:.18em;margin-top:44px;line-height:1}
+.cd-num{font-family:'Barlow Condensed';font-weight:900;font-size:520px;line-height:.8;margin-left:-12px}
+.cd-un{font-family:'Barlow Condensed';font-weight:900;font-size:150px;letter-spacing:.04em;text-transform:uppercase;line-height:.9;color:var(--acc)}
+.cd-row{display:flex;align-items:flex-end;gap:34px}
+.cd-sub{font-family:'Barlow Condensed';font-weight:800;font-size:70px;line-height:1;text-transform:uppercase;margin-top:34px}
+.offerbar{margin-top:34px;border-left:12px solid var(--acc);padding:6px 0 4px 26px;font-family:'Barlow Condensed';font-weight:800;font-size:72px;line-height:1;text-transform:uppercase}
+.h2{font-family:'Barlow Condensed';font-weight:900;font-size:128px;line-height:.92;text-transform:uppercase;margin-top:40px}
+.list{list-style:none;margin-top:46px}
+.list li{font-family:'Barlow Condensed';font-weight:800;font-size:66px;text-transform:uppercase;line-height:1;padding:20px 0;border-top:2px solid var(--line);display:flex;align-items:center;gap:26px}
+.list li:last-child{border-bottom:2px solid var(--line)}
+.list li i{display:block;width:34px;height:34px;background:var(--acc);transform:skewX(-12deg);flex:none}
+.step{display:flex;gap:34px;align-items:flex-start;padding:28px 0;border-top:2px solid var(--line)}
+.step:last-child{border-bottom:2px solid var(--line)}
+.step .n{font-family:'Barlow Condensed';font-weight:900;font-size:150px;line-height:.8;color:var(--acc);width:110px}
+.step b{display:block;font-family:'Barlow Condensed';font-weight:800;font-size:64px;text-transform:uppercase;line-height:1}
+.step span{display:block;font-size:30px;color:var(--mut);margin-top:10px;line-height:1.3}
+.contato{margin-top:26px;font-family:'Barlow Condensed';font-weight:800;font-size:54px;letter-spacing:.06em;text-transform:uppercase}
+</style></head>
+<body>
+<div class="slab"></div><svg class="rotor" viewBox="-500 -500 1000 1000" id="rotor"></svg>
+<div class="wrap" id="w"></div>
+<script>
+const q=new URLSearchParams(location.hash.slice(1));
+const M=q.get('m')||'headline',P=q.get('p')||'a',F=q.get('f')||'feed',S=+(q.get('s')||1);
+document.body.classList.add(P==='b'?'b':'a');if(F==='story')document.body.classList.add('story');
+const C=window.CFG||{marca:'Marca',oferta:'50',rodape:'',cta:'Solicite seu orçamento',servicos:[],passos:[],countdown:{numero:'3',unidade:'dias'}};
+const topo=(pg)=>`<div class="top"><i></i>${C.marca}${pg?`<span class="pg">${pg}</span>`:''}</div><div class="rule"></div>`;
+const tag='<div class="tag"><span>Black Friday</span></div>';
+const fine=`<div class="fine">${C.rodape}</div>`;
+const btn=(t)=>`<div class="cta"><div class="btn">${t||C.cta} <em>→</em></div></div>`;
+const contato=C.contato?`<div class="contato">${C.contato}</div>`:'';
+const mid=(h)=>`<div class="mid">${h}</div>`;
+const headline=()=>mid(`${tag}<div class="cd ate">Até</div><div class="pct">${C.oferta}<small>%</small></div><div class="desc">de desconto<br>em <b>serviços*</b></div>`);
+const countdown=()=>mid(`${tag}<div class="cd cd-sm">Faltam</div><div class="cd-row"><div class="cd-num">${C.countdown.numero}</div><div class="cd-un">${C.countdown.unidade}</div></div><div class="cd-sub">para a Black Friday</div><div class="offerbar">Até ${C.oferta}% de desconto<br>em serviços*</div>`);
+const servicos=()=>mid(`${tag}<div class="h2">Até <b>${C.oferta}%</b><br>em serviços*</div><ul class="list">${C.servicos.map(s=>`<li><i></i>${s}</li>`).join('')}</ul>`);
+const passos=()=>mid(`${tag}<div class="h2" style="font-size:100px">Como<br><b>pedir</b></div><div style="margin-top:36px">${C.passos.map((p,i)=>`<div class="step"><div class="n">${i+1}</div><div><b>${p[0]}</b><span>${p[1]}</span></div></div>`).join('')}</div>`);
+const final=()=>mid(`${tag}<div class="h2">Chegou a hora<br>de cuidar<br>do seu <b>carro</b></div>${contato}`);
+let body='',pg='';
+if(M==='headline')body=headline()+btn()+fine;
+if(M==='countdown')body=countdown()+btn()+fine;
+if(M==='servicos')body=servicos()+btn()+fine;
+if(M==='carrossel'){pg=`${S}/4`;body=[headline()+btn()+fine,servicos()+fine,passos()+fine,final()+btn()+fine][S-1];}
+document.getElementById('w').innerHTML=topo(pg)+body;
+// disco de freio desenhado por código
+const ns='http://www.w3.org/2000/svg',s=document.getElementById('rotor');
+const el=(t,a)=>{const e=document.createElementNS(ns,t);for(const k in a)e.setAttribute(k,a[k]);s.appendChild(e);return e};
+const cs=getComputedStyle(document.body),R=cs.getPropertyValue('--rotor').trim(),R2=cs.getPropertyValue('--rotor2').trim(),BG=cs.getPropertyValue('--bg').trim();
+el('circle',{r:480,fill:R,stroke:R2,'stroke-width':6});el('circle',{r:455,fill:'none',stroke:R2,'stroke-width':2});el('circle',{r:230,fill:'none',stroke:R2,'stroke-width':2});
+for(let i=0;i<48;i++){const a=i*Math.PI*2/48,r=i%2?345:385;el('circle',{cx:Math.cos(a)*r,cy:Math.sin(a)*r,r:15,fill:BG,stroke:R2,'stroke-width':3})}
+el('circle',{r:170,fill:BG,stroke:R2,'stroke-width':6});el('circle',{r:75,fill:R,stroke:R2,'stroke-width':4});
+for(let i=0;i<5;i++){const a=i*Math.PI*2/5-Math.PI/2;el('circle',{cx:Math.cos(a)*120,cy:Math.sin(a)*120,r:19,fill:R,stroke:R2,'stroke-width':4})}
+</script></body></html>
