@@ -5,6 +5,7 @@ Agentes de IA da FUEL UP, agência de tráfego pago para oficinas mecânicas (Ub
 | Pasta | Conteúdo |
 |---|---|
 | [`fuel-up/SKILL.md`](fuel-up/SKILL.md) | **Agente geral**: cuida de prospecção, vendas, campanhas, atendimento, conteúdo, financeiro e rotina. |
+| [`resumo-mensagens/SKILL.md`](resumo-mensagens/SKILL.md) | **Skill de resumo**: toda mensagem recebida (WhatsApp, lead, e-mail, agente) vira resumo curto com emojis e resposta pronta, para o João aprovar em segundos. |
 | [`design/SKILL.md`](design/SKILL.md) | **Skill de design**: pesquisa de referências antes de tudo, modelos de anúncio para oficina (motor de código e Canva), checklist de designer. |
 | [`criativos/`](criativos/) | Criativos já feitos (Stahl Car, Black Friday), versões v1 a v3. |
 | [`contexto/empresa.md`](contexto/empresa.md) | Dados da empresa que o agente lê antes de agir. Preencher os campos "A PREENCHER". |
