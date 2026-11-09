@@ -30,3 +30,16 @@ Links:
 - Lição: gerar no máximo 3 por rodada; 5 gerações esgotaram os créditos.
 
 **Pendências para a rodada 3 (depois que os créditos voltarem ou com edit-design):** título cromo/ouro 3D, versão story, foto real comprovada, logotipo e preço do selo.
+
+## Rodada 3 (09/11/2026) · fotos reais da Stahl Car + Canva Pro
+**Desbloqueios:**
+- Fotos HEIC do Drive: `download_file_content` salva o base64 em arquivo quando é grande; `motor/heic2jpg.py` e `motor/folha_fotos.py` convertem (pillow-heif) e geram folha de contato. 12 das 33 fotos lidas.
+- Upload para o Canva: `create-upload-url` + `curl -X POST --data-binary` com os bytes do JPG → `mediaId`. Funcionou (IMG_4884 = MAHacUUXzbA).
+- `copy-design` duplica sem gastar créditos; `edit-design` troca o fundo (`update_fill` no page id) e insere formas (`insert_shape`) para sombra.
+- João liberou créditos do Canva Pro.
+
+**A3** (cópia do A2 com foto real IMG_4884, frasco Valvoline na oficina): https://www.canva.com/d/IY0l1wS8thUXS7r (DAHacbZH-Lk). Rascunho aberto, não gravado.
+- Lição: forma inserida vai para a frente; usar `layer_element: back`. Degradê = várias camadas de 9% de opacidade, não 3 de 22% (degraus visíveis).
+- Pendência: a foto mostra marca Valvoline (produto de terceiro). Confirmar com o cliente se pode aparecer; alternativa é a foto do elevador (IMG_4869/4870).
+
+**Em andamento:** C3 story e D3 feed gerados no Canva para receber as fotos reais IMG_4869/4870/4888.
