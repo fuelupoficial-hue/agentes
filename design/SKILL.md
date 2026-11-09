@@ -22,7 +22,8 @@ Para cada: gancho (3 a 7 palavras), título, apoio, CTA, direção visual. Escol
 
 ### 3. Construir
 - **Canva é a ferramenta principal** (decisão do João, 09/11/2026: o motor de código ainda é fraco para este padrão). Use `canva-briefing.md`. Cada `create-design` gasta **créditos de IA do Canva**; na rodada 1 (5 gerações) os créditos acabaram (`quota_exceeded`). Gere em lotes pequenos, avise o João antes de passar de 3 por rodada e prefira **`edit-design`** (ajusta texto, cor, posição) para refinar.
-- **Fotos:** o Canva escolhe a imagem sozinho e **não dá para provar que é fotografia real** (pode ser sintética). Para garantir foto real, o caminho é subir a foto do cliente ou uma foto licenciada (`upload-asset-from-url` + `edit-design`).
+- **Fotos reais do cliente** (prioridade): buscar na pasta do cliente no Drive e seguir o "Fluxo de foto real" em `ferramentas.md` (converter, subir ao Canva, trocar o fundo com `edit-design`).
+- **Fotos do Canva:** o Canva escolhe a imagem sozinho e **não dá para provar que é fotografia real** (pode ser sintética). Para garantir foto real, o caminho é subir a foto do cliente ou uma foto licenciada (`upload-asset-from-url` + `edit-design`).
 - **Motor de código** (`motor/`, legado/apoio): modelos `headline`, `countdown`, `servicos`, `carrossel`, em feed 4:5 e story 9:16, paleta `a` (preto e âmbar) ou `b` (claro e vermelho). Editar `clientes/<cliente>/config.json` e rodar `node motor/render.js <cliente> <a|b> [modelos]`.
 - **Canva:** ver `ferramentas.md`. Serve para edição pelo cliente ou por um designer humano, kit de marca, redimensionar e exportar.
 - Foto real: pedir ao João (da oficina, do serviço, da equipe). Banco licenciado só com licença comercial conferida.

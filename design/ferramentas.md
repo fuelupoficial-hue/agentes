@@ -29,3 +29,13 @@ Playwright + HTML/CSS + SVG. Fontes Barlow Condensed e Inter (Google Fonts). Sem
 - `gtavi/engine`: motor de cenas animadas (vídeo de 6 a 8s com contagem do 50%).
 - `awesome-design-md`: direção visual de marcas automotivas.
 - `meta-ads-generator-skill`: só o método (briefing, conceitos, aprovação). Sem licença; não copiar código.
+
+## Fluxo de foto real (Drive → Canva), testado em 09/11/2026
+1. `search_files` no Drive (`parentId = '<pasta do cliente>'`) lista as fotos.
+2. `download_file_content` em cada foto: quando é grande, a resposta é **salva em arquivo** JSON (base64) em `tool-results/`, sem estourar a conversa.
+3. `python3 motor/folha_fotos.py <tool-results> <saida>` converte tudo (HEIC inclusive, via pillow-heif), corrige rotação EXIF, limita a 2000px e gera `_folha.png` para escolher.
+4. `create-upload-url` no Canva + `curl -X POST -H "Content-Type: application/octet-stream" --data-binary @foto.jpg <url>` → `{"mediaId": ...}`.
+5. `copy-design` do layout aprovado (não gasta crédito) → `read-design` com `open_transaction` → `edit-design`: `update_fill` com `locator_id` = id da página troca o fundo; `delete_element` tira a imagem gerada; `insert_shape` + `layer_element: back` cria sombra atrás do texto (várias camadas de ~9%).
+6. Mostrar ao João; só então `finalize: commit`.
+
+Limites: `read_file_content` não lê HEIC nem devolve JPG como imagem; arquivos pequenos voltam inline (não dá para salvar). Fotos com marca de terceiros (ex.: Valvoline) precisam de aval do cliente.
