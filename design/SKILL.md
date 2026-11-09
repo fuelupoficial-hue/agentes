@@ -31,6 +31,9 @@ Todos os itens. Abra os PNG e olhe: texto cortado, sobreposição, contraste, zo
 ### 5. Entregar
 Imagens + `legenda`/texto do anúncio + lista de pendências (o que o cliente precisa confirmar antes de publicar). A publicação é sempre feita por uma pessoa.
 
+## Padrão de acabamento (correção do João, 09/11/2026)
+Fundo preto com tipografia limpa **não basta**: parece IA e fica longe do padrão de Black Friday de oficina. Toda peça de campanha deve ter **camadas**: fundo texturizado com luz, **título em letra estilizada 3D** (cromo/ouro, contorno, extrusão), **foto real** de produto/serviço/carro recortada com sombra, **selo de oferta** (anel/moeda/preço), selos auxiliares, **fita de alerta** e assinatura com logotipo. Ver `referencias/2026-11-stahl-black-friday-engenharia-reversa.md` e o kit `arte/kit-titulo.html`.
+
 ## Princípios visuais (extraídos de referências reais)
 - Fundo dominante escuro ou off-white, **uma única cor de destaque** (âmbar ou vermelho de corrida), usada com parcimônia.
 - Tipografia condensada em caixa alta, entrelinha apertada (~0,92 a 1).
