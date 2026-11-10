@@ -1,0 +1,8 @@
+{
+  "extra_mensal": 1500,
+  "dividas": [
+    {"nome": "Fatura parcelada (exemplo)", "saldo": 3000, "juros_am": 9, "parcela_minima": 400},
+    {"nome": "Empréstimo pessoal (exemplo)", "saldo": 8000, "juros_am": 4, "parcela_minima": 450},
+    {"nome": "Cheque especial (exemplo)", "saldo": 1000, "juros_am": 8, "parcela_minima": 100}
+  ]
+}
