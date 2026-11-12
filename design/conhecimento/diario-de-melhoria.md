@@ -43,3 +43,10 @@ Links:
 - Pendência: a foto mostra marca Valvoline (produto de terceiro). Confirmar com o cliente se pode aparecer; alternativa é a foto do elevador (IMG_4869/4870).
 
 **Em andamento:** C3 story e D3 feed gerados no Canva para receber as fotos reais IMG_4869/4870/4888.
+
+## 2026-11-12 · Rodada 4 · Carrossel Fuel UP no Canva (Seg 16/11, Black Friday)
+- **O que funcionou:** `create-design` com brief completo (7 páginas descritas uma a uma, paleta, moldura @ + contador, fotos reais de oficina) gerou o carrossel em 1 geração, já com fotos do banco do Canva. Direção visual pedida pelo João: os 2 últimos modelos de `MODELO POSTS FUEL UP` (DAHasZ2rmpM): tipografia gigante, objeto-herói, fundo escuro com 1 acento, pílula de @, selo de CTA.
+- **Erros do Canva corrigidos via API:** preço inventado (R$ 299,90) no cartão de comparação, palavra "entende?" duplicada, @ com erro de digitação. Regra mantida: ler `design_content` inteiro antes de mostrar.
+- **Limites:** a API não troca família de fonte (saiu condensada tipo Anton/Bebas; Barlow precisa ser aplicada no editor). "Instagram Post (Portrait)" sai 1080x1440; recorte central para 1080x1350 feito localmente.
+- **Fotos:** Google Imagens, Pexels e Unsplash bloqueiam navegador automatizado (CAPTCHA/Cloudflare). Funcionam: Openverse API (fraco para oficina) e Wikimedia Commons API com User-Agent descritivo (ensaio Shixart1985 CC BY 2.0 de mecânico em elevador). Thumbs do Commons só em larguras listadas (1920px ok) e com pausa entre pedidos (429).
+- **Reel:** motor `narracao-reels` do repositório gtavi ganhou paleta `fuelup` (preto/vermelho) via campo `"palette"` no script.json; cenas calendar/countdown/news/counter trocam fundo neon por escuro com brilho vermelho.

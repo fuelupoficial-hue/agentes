@@ -39,3 +39,12 @@ Playwright + HTML/CSS + SVG. Fontes Barlow Condensed e Inter (Google Fonts). Sem
 6. Mostrar ao João; só então `finalize: commit`.
 
 Limites: `read_file_content` não lê HEIC nem devolve JPG como imagem; arquivos pequenos voltam inline (não dá para salvar). Fotos com marca de terceiros (ex.: Valvoline) precisam de aval do cliente.
+
+## Fontes de foto que funcionam a partir do contêiner (12/11/2026)
+| Fonte | Resultado |
+|---|---|
+| Google Imagens (filtro CC) | CAPTCHA em toda busca automatizada |
+| Pexels / Unsplash (site) | bloqueio Cloudflare; só com chave de API |
+| Openverse API (`api.openverse.org/v1/images/`) | funciona, acervo fraco para oficina |
+| Wikimedia Commons API (`commons.wikimedia.org/w/api.php`) | funciona com `User-Agent` descritivo; thumbs em larguras fixas (640/1024/1280/1920); 4 s entre downloads |
+| Banco do Canva via `create-design` | melhor opção para fotos de oficina com licença Canva Pro |
